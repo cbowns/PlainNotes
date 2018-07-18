@@ -210,10 +210,10 @@ class NoteInsertTitleCommand(sublime_plugin.TextCommand):
 class NoteChangeColorCommand(sublime_plugin.WindowCommand):
 
     def run(self):
-        self.colors = ["cobalt2", "Orange", "Yellow", "Green", "GreenLight", "Blue", "BlueLight", "Purple", "Pink", "Gray", "White"]
+        self.colors = ["cobalt2"]
         self.window = sublime.active_window()
         self.original_cs = self.window.active_view().settings().get("color_scheme")
-        current_color = os.path.basename(self.original_cs).replace("Sticky-", "").replace(".tmTheme", "")
+        current_color = os.path.basename(self.original_cs).replace(".tmTheme", "")
         if ST3:
             self.window.show_quick_panel(self.colors, self.on_select, 0, self.colors.index(current_color), self.on_highlight)
         else:
