@@ -7,7 +7,7 @@ import os
 class CreateDailyNoteCommand(sublime_plugin.TextCommand):
     def run(self, edit):
 
-        note_title = datetime.datetime.now().strftime("%Y.%m.%d") + '.note'
+        note_title = datetime.datetime.now().strftime("%Y-%m-%d") + '.note'
 
         # if os.path.isfile(note_title):
         #     return
