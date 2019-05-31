@@ -12,7 +12,7 @@ class CreateDailyNoteCommand(sublime_plugin.TextCommand):
         # if os.path.isfile(note_title):
         #     return
 
-        note_path = os.environ['HOME'] + '/Notes/Reports/' + note_title
+        note_path = os.environ['HOME'] + '/Dropbox/Documents/VSCO/' + note_title
 
         print("CreateDailyNoteCommand  " + str(note_path))
         self.view.window().open_file(note_path)
