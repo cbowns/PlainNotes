@@ -7,12 +7,12 @@ import os
 class CreateDailyNoteCommand(sublime_plugin.TextCommand):
     def run(self, edit):
 
-        note_title = datetime.datetime.now().strftime("%Y.%m.%d") + '.note'
+        note_title = datetime.datetime.now().strftime("%Y-%m-%d") + '.note'
 
         # if os.path.isfile(note_title):
         #     return
 
-        note_path = os.environ['HOME'] + '/Notes/Reports/' + note_title
+        note_path = os.environ['HOME'] + '/Dropbox/Documents/notes/' + note_title
 
         print("CreateDailyNoteCommand  " + str(note_path))
         self.view.window().open_file(note_path)
